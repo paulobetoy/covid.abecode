@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- BOOTSTRAP  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"  
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+    <!-- D3JS  -->
+    <script src="https://d3js.org/d3.v5.js"></script>
+
+    <!-- LOCAL STYLESHEET FOR D3  -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/sidebar.css">
+    <title>PRUEBA</title>
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="index.html">Análisis</a>
+        <!-- <a href="About.html">Proceso</a> -->
+    </div>
+
+    <div class="main">
+
+        <!-- CONTROLES  -->
+        <div class="row bordes" id="controles">
+
+            <div class=" col-4 " style="background-color: rgb(243, 243, 234);">
+                
+                <div>Selecciona Producto 1</div>
+                        <select id="producto1"class="custom-select mr-sm-2">
+                          <option selected value="0">Choose...</option>
+                          <option value="bitcoin">Bitcoin</option>
+                          <option value="etherium">Etherium</option>
+                          <option value="brentoil">BrentOil</option>
+                          <option value="covid">Covid</option>
+                        </select>
+                
+            </div>
+            <div class=" col-4 " style="background-color: rgb(243, 243, 234);">
+                
+                <div>Selecciona Producto 2</div>
+                        <select id="producto2"class="custom-select mr-sm-2" >
+                          <option selected value="0">Choose...</option>
+                          <option value="bitcoin">Bitcoin</option>
+                          <option value="etherium">Etherium</option>
+                          <option value="brentoil">BrentOil</option>
+                          <option value="covid">Covid</option>
+                        </select>
+                
+            </div>
+            <div class=" col-4 " style="padding-top:30px;background-color: rgb(243, 243, 234);">
+
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1">Normalizado</label>
+                  </div>
+            </div>
+            
+
+        </div>
+
+
+        <!-- GRAFICA -->
+        <div style="margin-top:80px;" class="row">
+            <!-- <div class="col-6">okok</div> -->
+            <div class="col-12">
+                <div id="graph"></div>
+            </div>
+
+
+        </div>
+
+        <!-- TABLA 1 -->
+        <div class="class row">
+            <div class="col-6 bordes table table-wrapper-scroll-y my-custom-scrollbar">
+                <table id="dtVerticalScrollExample">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Vs</th>
+                            <th id="unidad1" scope="col">Tipo de Cambio</th>
+                            <th scope="col">Normalizado</th>
+                            <th scope="col">Tiempo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tablaProducto1">
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TABLA 2  -->
+            <div class="col-6 bordes table table-wrapper-scroll-y my-custom-scrollbar">
+                <table id="dtVerticalScrollExample">
+                    <thead>
+                        <tr>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Vs</th>
+                            <th id="unidad2" scope="col">Tipo de Cambio</th>
+                            <th scope="col">Normalizado</th>
+                            <th scope="col">Tiempo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="tablaProducto2">
+
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="./js/appAPI.js"></script>
+    <!-- <script src="./js/appFirebase.js"></script> -->
+</body>
+
+
+
+
+
+</html>
